@@ -1,4 +1,4 @@
 {
   "port": 504,
-  "middlewares" : "auth.js", "jsv.js"
+  "middlewares" : "auth.js"
 }
