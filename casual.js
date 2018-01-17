@@ -1,21 +1,24 @@
 var casual = require('casual');
 // Create an object for config file
 var code = casual.integer(100,999);
-var db = {death_star:{code_access:code, defence:[], fleet:[]}, rebels:[]};
+var db = {deathStar:{"access_to_defence":5176, "access_to_fleet":2345}, defenceLevels:[], fleet:[], rebels:[]};
 
-//make defence
+
+
+
+//add level of defence
 for(var i=0; i<5; i++){
-	var defence_level = {};
-    defence_level.id = i+1;
-	defence_level.activated = true;
-	defence_level.guards = casual.integer(8,45);
-	defence_level.energy_field = casual.integer(30,100);
-    defence_level.entry_coordinates = [casual.latitude, casual.longitude];
+	var defenceLevel = {};
+	defenceLevel.id = i+1;
+	defenceLevel.activated = true;
+	defenceLevel.guards = casual.integer(8,45);
+	defenceLevel.energy_field = casual.integer(30,100);
+    defenceLevel.entry_coordinates = [casual.latitude, casual.longitude];
 	
-    db.death_star.defence.push(defence_level);
+    db.defenceLevels.push(defenceLevel);
 };
 
-//make fleet
+//add fleet
 var types = ['TIE fighter', 'T-4 Shuttle', 'TIE-Bomber', 'TIE-Advance x1', 'TIE-Interceptor'];
 
 for(var i=0; i<15; i++){
@@ -23,12 +26,10 @@ for(var i=0; i<15; i++){
 	
 	var spaceship = {};
     spaceship.id = i+1;
+	spaceship.type = types[rand];
+	spaceship.coordinates = [casual.latitude, casual.longitude];
 	
-	var s = types[rand]
-	spaceship.type = s;
-    spaceship.coordinates = [casual.latitude, casual.longitude];
-	
-    db.death_star.fleet.push(spaceship);
+    db.fleet.push(spaceship);
 };
 
 //make rebels

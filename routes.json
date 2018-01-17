@@ -1,5 +1,6 @@
 {
   "/api/": "/",
-  "/blog/:resource/:id/show": "/:resource/:id",
-  "/blog/:category": "/posts?category=:category"
+  "/5176/":"/defencelevels/",
+  "/2345/":"/fleet/"
+  
 }
