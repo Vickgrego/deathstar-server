@@ -1,7 +1,7 @@
 var casual = require('casual');
 // Create an object for config file
 var code = casual.integer(100,999);
-var db = {deathStar:{"access_to_defence":5176, "access_to_fleet":2345}, defenceLevels:[], fleet:[], rebels:[]};
+var db = {deathStar:{"access_to_defence_DataBase":"defenceLevels", "access_to_fleet_dataBase":"fleet"}, defenceLevels:[], fleet:[], rebels:[]};
 
 
 
